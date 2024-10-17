@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafeteria | Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/lympng.png" type="image/png" />
+    </head>
+  <body>
+    <div class="logo"><img class="logotipo" src="img/logo.png" alt="logo" height="100px" width="auto"></div>
+    <div class="menu">
+      <div class="menu-1"><a href="#"></a>Inicio </a></div>
+      <div class="menu-1"><a href="#">Menu </a></div>
+      <div class="menu-1"><a href="#"> Contacto </a></div>
+    </div>
+      <div class="contactos">
+        <div class="cont">
+          <h1>Menu</h1>
+        </div>
+        <div class="formulario">
+          <div class="cafes">
+            <h1>Cafes </h1><hr>
+            <h1>Delicias </h1>
+          </div>          
+        </div>
+        <div class="formulario-menu">
+          <div class="comidas-cafe">
+            <label for="#"><h2>Cafe negro...$1000 </h2><input onchange="calcularTotal()" type="number" id="coffe"  min="0" value="0"></label>
+            <label for="#"><h2>Capuccino...$1000 </h2><input onchange="calcularTotal()" type="number" id="capuccino"  min="0" value="0"></label>
+            <label for="#"><h2>Té.................$1000</h2> <input onchange="calcularTotal()" type="number" id="te"  min="0" value="0"></label>
+            <label for="#"><h2>Americano..$1000 </h2><input onchange="calcularTotal()" type="number" id="americano"  min="0" value="0"></label>
+            <label for="#"><h2>Chocolate...$1000 </h2><input onchange="calcularTotal()" type="number" id="chocolate"  min="0" value="0"></label>
+          </div><hr>
+          <div class="comidas-delicias">
+            <label for="#"><h2>Torta helada...$1000 </h2><input onchange="calcularTotal()" type="number" id="tortaHelada"  min="0" value="0"></label>
+            <label for="#"><h2>Media lunas....$1000 </h2><input onchange="calcularTotal()" type="number" id="mediaLuna"  min="0" value="0"></label>
+            <label for="#"><h2>Sandwich........$1000 </h2><input onchange="calcularTotal()" type="number" id="sandwich"  min="0" value="0"></label>
+            <label for="#"><h2>Wafles.............$1000 </h2><input onchange="calcularTotal()" type="number" id="wafles"  min="0" value="0"></label>
+            <label for="#"><h2>Pan dulce........$1000 </h2><input onchange="calcularTotal()" type="number" id="panDulce"  min="0" value="0"></label>
+          </div>
+        </div>
+        <div class="formulario">
+          <button class="but-menu" onclick="pedirOrden()">Pedir orden</button>
+        </div>
+        <div class="total-menu">
+          <p id="total"></p><br>
+          
+        </div>
+      </div>    
+    </div>
+    <div class="modal" id="orden">
+      <p id="cerrarModal" onclick="ocultarModal()">X</p>
+      <p id="textModal"></p>
+    </div>
+
+
+    <script>
+      function ocultarModal(){
+        const modal = document.getElementById("orden");
+        modal.style.display = "none";
+        
+      }
+
+      let total = 0;
+
+      function calcularTotal(){
+
+        const precioCafeNegro = 1000;
+        const precioCapuccino = 1000;
+        const precioTe = 1000;
+        const precioAmericano = 1000;
+        const precioChocolate = 1000;
+        const precioTotaHelada = 1000;
+        const precioMediaLuna = 1000;
+        const precioSandwich = 1000;
+        const precioWafles = 1000;
+        const precioPanDulce = 1000; 
+
+        const cantidadCafe = parseInt(document.getElementById("coffe").value)|| 0;
+        const cantidadCapuccino = parseInt(document.getElementById("capuccino").value)|| 0;
+        const cantidadTe= parseInt(document.getElementById("te").value)|| 0;
+        const cantidadAmericano = parseInt(document.getElementById("americano").value)|| 0;
+        const cantidadChocolate = parseInt(document.getElementById("chocolate").value)|| 0;
+        const cantidadTorta = parseInt(document.getElementById("tortaHelada").value)|| 0;
+        const cantidadML = parseInt(document.getElementById("mediaLuna").value)|| 0;
+        const cantidadSandwich = parseInt(document.getElementById("sandwich").value)|| 0;
+        const cantidadWafles = parseInt(document.getElementById("wafles").value)|| 0;
+        const cantidadPanDulce = parseInt(document.getElementById("panDulce").value)|| 0;
+
+        total = (cantidadCafe * precioCafeNegro) + (cantidadCapuccino * precioCapuccino) + (cantidadTe * precioTe) + (cantidadAmericano * precioAmericano) + (cantidadChocolate * precioChocolate) + (cantidadTorta * precioTotaHelada) + (cantidadML * precioMediaLuna) + (cantidadSandwich * precioSandwich) + (cantidadWafles * precioWafles) + (cantidadPanDulce * precioPanDulce);
+    
+        document.getElementById("total").innerText = "Total a pagar: $" + total.toFixed(2);
+      }
+
+      function pedirOrden(){
+        const modal = document.getElementById("orden");
+        modal.style.display = "block";
+        const textModal = document.getElementById("textModal");
+        
+
+
+        if(total === 0){
+
+          textModal.innerText = "No ha seleccionado ningun pedido";
+          
+        
+        }else{
+
+        textModal.innerText = "Su orden está en camino";
+        
+      }
+      }
+    </script>
+  </body>
+</html>
