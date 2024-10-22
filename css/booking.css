@@ -1,0 +1,41 @@
+#formContainer {
+    margin: 20px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+    max-width: 100%;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+#btnDelete{
+    background-color: orange;
+}
+
+#btnDelete:hover{
+    transition-duration: 0,5s;
+    background-color: red;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}

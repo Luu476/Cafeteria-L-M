@@ -5,24 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteria | Contacto</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./img/lympng.png" type="image/png" />
 </head>
 
 <body>
     
-    <div class="logo"><img class="logotipo" src="img/logo.png" alt="logo" height="100px" width="auto"></div>
-    <div class="menu">
-                <div class="menu-1"><a href="#"></a>Inicio </a></div>
-                <div class="menu-1"><a href="#">Informacion </a></div>
-                <div class="menu-1"><a href="#"> Contacto </a></div>
-
+    <header id="header">
+        <div class="header_in">
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="menu.html">Menú</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            
+            <div class="logo">
+                <a href="index.html">
+                    <img class="logotipo" src="imagenes/lympng.png" alt="logo">
+                </a>
             </div>
+        </div>
+    </header>
             <div class="contactos">
                 <div class="cont">
-                    <p><img src="images/telefono.png" alt="telefono" width="70px" height="auto"><br> +54 2345 768906</p>
-                    <p><img src="images/sobre.png" alt="email" width="70px" height="auto"><br> correo123@gamil.com</p>
-                    <p><img src="images/instagram.png" alt="instagram" width="70px" height="auto"><br> coffe_L&M</p>
+                    <p><img src="imagenes/contacto/telefono.png" alt="telefono" width="70px" height="auto"><br> +54 2345 768906</p>
+                    <p><img src="imagenes/contacto/sobre.png" alt="email" width="70px" height="auto"><br> correo123@gmail.com</p>
+                    <p><img src="imagenes/contacto/instagram.png" alt="instagram" width="70px" height="auto"><br> coffe_L&M</p>
                 </div>
 
             </div>
@@ -31,14 +40,14 @@
                     <h1>Contactos</h1><br><br>
                     <div class="formulario">
                             <div class="input-conedor">
-                                <form action="#">
-                                <label for="name">Your Name</label><br>
-                                <input type="text" name="name" id="name"> <br><br>
-                                <label for="email">Your Email</label><br>
-                                <input  type="text" name="email" id="email"> <br><br>
-                                <label id="mensaje" for="mensaje">Mensaje</label><br>
-                                <textarea name="mensaje" id="mensaje"></textarea> 
-                                <button type="button">Enviar</button>
+                                <form action="#" novalidate >
+                                <label for="name">Telefono</label><br>
+                                <input type="text"  id="telefono" required> <br><br>
+                                <label for="email">Email</label><br>
+                                <input  type="text"  id="email" required> <br><br>
+                                <label id="mens" for="mensaje">Mensaje</label><br>
+                                <textarea name="mensaje" id="mensaje" required></textarea>
+                                <button type="button" onclick="enviarMensaje()">Enviar</button>
                                 </form>
                             </div>
                             <div class="mapa">
@@ -47,10 +56,45 @@
                     </div>
         
                 </div>
+                <div class="modal" id="orden">
+                    <p id="cerrarModal" onclick="ocultarModal()">X</p>
+                    <p id="textModal"></p>
+                  </div>
             </section>
        
 
     </div>
+    <script>
+
+        const email = document.getElementById("email");
+        const telefono = document.getElementById("telefono");
+        const mensaje = document.getElementById("mensaje");
+
+        function ocultarModal(){
+        const modal = document.getElementById("orden");
+        modal.style.display = "none";
+        
+      }
+      function enviarMensaje(){
+        console.log(email.value);
+        console.log(telefono.value);
+        console.log(mensaje);
+        if(email.value == "" || telefono.value == "" || mensaje.value == ""){
+            const modal = document.getElementById("orden");
+            modal.style.display = "block";
+            const textModal = document.getElementById("textModal");
+            textModal.innerText = 'Los campos no pueden estar vacios';
+        }else{
+
+        const modal = document.getElementById("orden");
+        modal.style.display = "block";
+        const textModal = document.getElementById("textModal");
+
+        textModal.innerText = 'El usuario: '+email.value+' de telefono: '+telefono.value+' dice: '+mensaje.value;
+    }
+      }
+
+    </script>
 
 </body>
 

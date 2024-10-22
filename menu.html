@@ -4,34 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafeteria | Menu</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./img/lympng.png" type="image/png" />
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="imagenes/lympng.png" type="image/png" />
     </head>
   <body>
-    <div class="logo"><img class="logotipo" src="img/logo.png" alt="logo" height="100px" width="auto"></div>
-    <div class="menu">
-      <div class="menu-1"><a href="#"></a>Inicio </a></div>
-      <div class="menu-1"><a href="#">Menu </a></div>
-      <div class="menu-1"><a href="#"> Contacto </a></div>
-    </div>
+    <header id="header">
+      <div class="header_in">
+          <nav>
+              <a href="index.html">Inicio</a>
+              <a href="menu.html">Menú</a>
+              <a href="contacto.html">Contacto</a>
+          </nav>
+          
+          <div class="logo">
+              <a href="index.html">
+                  <img class="logotipo" src="imagenes/lympng.png" alt="logo">
+              </a>
+          </div>
+      </div>
+  </header>
       <div class="contactos">
         <div class="cont">
           <h1>Menu</h1>
         </div>
-        <div class="formulario">
-          <div class="cafes">
-            <h1>Cafes </h1><hr>
-            <h1>Delicias </h1>
-          </div>          
-        </div>
-        <div class="formulario-menu">
-          <div class="comidas-cafe">
-            <label for="#"><h2>Cafe negro...$1000 </h2><input onchange="calcularTotal()" type="number" id="coffe"  min="0" value="0"></label>
-            <label for="#"><h2>Capuccino...$1000 </h2><input onchange="calcularTotal()" type="number" id="capuccino"  min="0" value="0"></label>
-            <label for="#"><h2>Té.................$1000</h2> <input onchange="calcularTotal()" type="number" id="te"  min="0" value="0"></label>
-            <label for="#"><h2>Americano..$1000 </h2><input onchange="calcularTotal()" type="number" id="americano"  min="0" value="0"></label>
-            <label for="#"><h2>Chocolate...$1000 </h2><input onchange="calcularTotal()" type="number" id="chocolate"  min="0" value="0"></label>
-          </div><hr>
+        <div class="articles_container">
+          <div class="formulario-menu">
+          <article>
+            <div class="cafes">
+              <h1>Cafes </h1>
+            </div> 
+            <img src="imagenes/landingpage/coffee01.jpeg" alt="" />
+
+              <div class="comidas-cafe">
+                <label for="#"><h2>Cafe negro...$1000 </h2><input onchange="calcularTotal()" type="number" id="coffe"  min="0" value="0"></label>
+                <label for="#"><h2>Capuccino...$1000 </h2><input onchange="calcularTotal()" type="number" id="capuccino"  min="0" value="0"></label>
+                <label for="#"><h2>Té.................$1000</h2> <input onchange="calcularTotal()" type="number" id="te"  min="0" value="0"></label>
+                <label for="#"><h2>Americano..$1000 </h2><input onchange="calcularTotal()" type="number" id="americano"  min="0" value="0"></label>
+                <label for="#"><h2>Chocolate...$1000 </h2><input onchange="calcularTotal()" type="number" id="chocolate"  min="0" value="0"></label>
+              </div>
+          </article>
+          <article>
+            <div class="cafes">
+              <h1>Delicias </h1>
+            </div> 
+            <img src="imagenes/landingpage/cake01.png" alt="" />
           <div class="comidas-delicias">
             <label for="#"><h2>Torta helada...$1000 </h2><input onchange="calcularTotal()" type="number" id="tortaHelada"  min="0" value="0"></label>
             <label for="#"><h2>Media lunas....$1000 </h2><input onchange="calcularTotal()" type="number" id="mediaLuna"  min="0" value="0"></label>
@@ -39,14 +57,18 @@
             <label for="#"><h2>Wafles.............$1000 </h2><input onchange="calcularTotal()" type="number" id="wafles"  min="0" value="0"></label>
             <label for="#"><h2>Pan dulce........$1000 </h2><input onchange="calcularTotal()" type="number" id="panDulce"  min="0" value="0"></label>
           </div>
+          </article>
         </div>
-        <div class="formulario">
-          <button class="but-menu" onclick="pedirOrden()">Pedir orden</button>
         </div>
         <div class="total-menu">
           <p id="total"></p><br>
           
         </div>
+        </div>
+        <div class="formulario">
+          <button class="but-menu" onclick="pedirOrden()">Pedir orden</button>
+        </div>
+
       </div>    
     </div>
     <div class="modal" id="orden">

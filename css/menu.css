@@ -1,0 +1,73 @@
+/* encabezado */
+header {
+  background-color: #ffe4c8;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+
+  }
+  
+  .header_in nav a {
+    color: #281a14;
+    margin-left: 15px;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .header_in nav a:hover {
+    background-color: #281a14;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.25s ease;
+  }
+  
+  .logo {
+    height: 90px;
+    margin: 10px;
+  }
+  
+  .logo img {
+    height: 90px;
+    border-radius: 50%;
+    transition: border 0.5s ease;
+  }
+  
+  .logo img:hover {
+    border: 2px solid black;
+  }
+  
+body {
+    background-color: #2f1f11;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.articles_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Centrar los artículos */
+    
+}
+
+article {
+    width: 35%; /* Tamaño del artículo */
+    margin: 10px;
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+article img {
+    width: 100%; /* Ajustar al ancho del artículo */
+    height: auto; /* Mantener proporciones */
+    max-width: 300px; /* Tamaño máximo */
+    margin: 20px auto; /* Centrar la imagen */
+    display: block; /* Asegurarse de que se trate como bloque */
+}

@@ -256,12 +256,12 @@ hr{
 }
 
 .modal{
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 800px;
   position: fixed;
   background: #ffeac3;
-  top: calc(50% - 100px);
-  left: calc(50% - 100px);
+  top: 30%;
+  left: 30%;
   display: none;
   color: black;
   border: solid 5px black;
