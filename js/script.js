@@ -1,8 +1,8 @@
 const images = [
-    '/imagenes/carrousel/cafe_torta.jpg',
-    '/imagenes/carrousel/waffle.jpg',
-    '/imagenes/carrousel/cafe_med.jpg',
-    '/imagenes/carrousel/cafe_croissant.jpg'
+    'imagenes/carrousel/factu.jpg',
+    'imagenes/carrousel/waffle.jpg',
+    'imagenes/carrousel/cafe_med.jpg',
+    'imagenes/carrousel/cafe_croissant.jpg'
   ];
   
   let currentIndex = 0;

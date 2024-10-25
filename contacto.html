@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteria | Contacto</title>
-    <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="./img/lympng.png" type="image/png" />
+    <link rel="icon" href="imagenes/lympng.png" type="image/png" />
 </head>
 
 <body>
@@ -65,35 +64,50 @@
 
     </div>
     <script>
-
         const email = document.getElementById("email");
         const telefono = document.getElementById("telefono");
         const mensaje = document.getElementById("mensaje");
 
-        function ocultarModal(){
-        const modal = document.getElementById("orden");
-        modal.style.display = "none";
-        
-      }
-      function enviarMensaje(){
-        console.log(email.value);
-        console.log(telefono.value);
-        console.log(mensaje);
-        if(email.value == "" || telefono.value == "" || mensaje.value == ""){
+        function ocultarModal() {
             const modal = document.getElementById("orden");
-            modal.style.display = "block";
+            modal.style.display = "none";
+        }
+
+        function validarEmail(correo) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(correo);
+        }
+
+        function validarTelefono(numero) {
+            const regex = /^\d{10}$/;
+            return regex.test(numero);
+        }
+
+        function enviarMensaje() {
+            const modal = document.getElementById("orden");
             const textModal = document.getElementById("textModal");
-            textModal.innerText = 'Los campos no pueden estar vacios';
-        }else{
 
-        const modal = document.getElementById("orden");
-        modal.style.display = "block";
-        const textModal = document.getElementById("textModal");
+            if (email.value === "" || telefono.value === "" || mensaje.value === "") {
+                modal.style.display = "block";
+                textModal.innerText = 'Los campos no pueden estar vacíos.';
+                return;
+            }
 
-        textModal.innerText = 'El usuario: '+email.value+' de telefono: '+telefono.value+' dice: '+mensaje.value;
-    }
-      }
+            if (!validarEmail(email.value)) {
+                modal.style.display = "block";
+                textModal.innerText = 'Correo electronico invalido';
+                return;
+            }
 
+            if (!validarTelefono(telefono.value)) {
+                modal.style.display = "block";
+                textModal.innerText = 'Numero de telefono invalido';
+                return;
+            }
+
+            modal.style.display = "block";
+            textModal.innerText = 'El usuario: ' + email.value + ' de teléfono: ' + telefono.value + ' dice: ' + mensaje.value;
+        }
     </script>
 
 </body>

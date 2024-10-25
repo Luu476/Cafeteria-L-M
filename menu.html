@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafeteria | Menu</title>
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="icon" href="imagenes/lympng.png" type="image/png" />
     </head>
   <body>
@@ -38,11 +36,11 @@
             <img src="imagenes/landingpage/coffee01.jpeg" alt="" />
 
               <div class="comidas-cafe">
-                <label for="#"><h2>Cafe negro...$1000 </h2><input onchange="calcularTotal()" type="number" id="coffe"  min="0" value="0"></label>
-                <label for="#"><h2>Capuccino...$1000 </h2><input onchange="calcularTotal()" type="number" id="capuccino"  min="0" value="0"></label>
-                <label for="#"><h2>Té.................$1000</h2> <input onchange="calcularTotal()" type="number" id="te"  min="0" value="0"></label>
-                <label for="#"><h2>Americano..$1000 </h2><input onchange="calcularTotal()" type="number" id="americano"  min="0" value="0"></label>
-                <label for="#"><h2>Chocolate...$1000 </h2><input onchange="calcularTotal()" type="number" id="chocolate"  min="0" value="0"></label>
+                <label for="#"><h2>Cafe negro...$4000 </h2><input onchange="calcularTotal()" type="number" id="coffe"  min="0" value="0"></label>
+                <label for="#"><h2>Capuccino...$3000 </h2><input onchange="calcularTotal()" type="number" id="capuccino"  min="0" value="0"></label>
+                <label for="#"><h2>Té.................$1500</h2> <input onchange="calcularTotal()" type="number" id="te"  min="0" value="0"></label>
+                <label for="#"><h2>Americano..$5000 </h2><input onchange="calcularTotal()" type="number" id="americano"  min="0" value="0"></label>
+                <label for="#"><h2>Chocolate...$4500 </h2><input onchange="calcularTotal()" type="number" id="chocolate"  min="0" value="0"></label>
               </div>
           </article>
           <article>
@@ -51,11 +49,11 @@
             </div> 
             <img src="imagenes/landingpage/cake01.png" alt="" />
           <div class="comidas-delicias">
-            <label for="#"><h2>Torta helada...$1000 </h2><input onchange="calcularTotal()" type="number" id="tortaHelada"  min="0" value="0"></label>
-            <label for="#"><h2>Media lunas....$1000 </h2><input onchange="calcularTotal()" type="number" id="mediaLuna"  min="0" value="0"></label>
-            <label for="#"><h2>Sandwich........$1000 </h2><input onchange="calcularTotal()" type="number" id="sandwich"  min="0" value="0"></label>
-            <label for="#"><h2>Wafles.............$1000 </h2><input onchange="calcularTotal()" type="number" id="wafles"  min="0" value="0"></label>
-            <label for="#"><h2>Pan dulce........$1000 </h2><input onchange="calcularTotal()" type="number" id="panDulce"  min="0" value="0"></label>
+            <label for="#"><h2>Torta helada...$3500 </h2><input onchange="calcularTotal()" type="number" id="tortaHelada"  min="0" value="0"></label>
+            <label for="#"><h2>Media lunas....$2000 </h2><input onchange="calcularTotal()" type="number" id="mediaLuna"  min="0" value="0"></label>
+            <label for="#"><h2>Sandwich........$3700 </h2><input onchange="calcularTotal()" type="number" id="sandwich"  min="0" value="0"></label>
+            <label for="#"><h2>Wafles.............$5000 </h2><input onchange="calcularTotal()" type="number" id="wafles"  min="0" value="0"></label>
+            <label for="#"><h2>Pan dulce........$3000 </h2><input onchange="calcularTotal()" type="number" id="panDulce"  min="0" value="0"></label>
           </div>
           </article>
         </div>
@@ -88,16 +86,16 @@
 
       function calcularTotal(){
 
-        const precioCafeNegro = 1000;
-        const precioCapuccino = 1000;
-        const precioTe = 1000;
-        const precioAmericano = 1000;
-        const precioChocolate = 1000;
-        const precioTotaHelada = 1000;
-        const precioMediaLuna = 1000;
-        const precioSandwich = 1000;
-        const precioWafles = 1000;
-        const precioPanDulce = 1000; 
+        const precioCafeNegro = 4000;
+        const precioCapuccino = 3000;
+        const precioTe = 1500;
+        const precioAmericano = 5000;
+        const precioChocolate = 4500;
+        const precioTotaHelada = 3500;
+        const precioMediaLuna = 2000;
+        const precioSandwich = 3700;
+        const precioWafles = 5000;
+        const precioPanDulce = 3000; 
 
         const cantidadCafe = parseInt(document.getElementById("coffe").value)|| 0;
         const cantidadCapuccino = parseInt(document.getElementById("capuccino").value)|| 0;
